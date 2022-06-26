@@ -1,13 +1,18 @@
 const express = require("express");
 const { MongoClient, ObjectId } = require('mongodb');
+const dotenv = require("dotenv")
 
-const port = 3000;
-
+dotenv.config();
+if (!process.env.PORT) {
+    console.log("no port configured")
+    process.exit(1)
+}
+const port = process.env.PORT;
 // Connection URL
-const url = 'mongodb://docker:mongopw@localhost:49153';
+const url = process.env.CONNECTION_STRING;
 const client = new MongoClient(url);
 // Database Name
-const dbName = 'bdnr';
+const dbName = process.env.DB_NAME;
 client.connect().then(()=>{
     console.log('Connected successfully to database');
 });
