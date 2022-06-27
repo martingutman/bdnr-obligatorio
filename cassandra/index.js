@@ -1,11 +1,15 @@
 const express = require("express");
 const cassandra = require('cassandra-driver');
-const port = 3000;
+const dotenv = require("dotenv");
+
+dotenv.config();
+
+const port = process.env.PORT;
 
 const client = new cassandra.Client({
-    contactPoints: ['127.0.0.1:9042'],
-    localDataCenter: 'datacenter1',
-    keyspace: 'bdnr'
+    contactPoints: [process.env.CONTACT_POINT],
+    localDataCenter: process.env.LOCAL_DATA_CENTER,
+    keyspace: process.env.KEY_SPACE
 });
 
 const app = express();
