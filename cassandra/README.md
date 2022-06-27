@@ -2,7 +2,7 @@
 
 ## Creación de la estructura
 
-1. Creación de la conexión por consola o con herramientas descargables (ej: TablePlus). Usar la ip 127.0.0.1 y el puerto por defecto 9042
+1. Creación de la conexión por consola o con herramientas descargables (ej: TablePlus). Usar la ip 127.0.0.1 y el puerto por defecto 9042 (o en el puerto e ip que se encuentre corriendo el servicio de cassandra)
 1. Crear la base, en este caso llamada ´bdnr´
 1. Crear la tabla de ´vehicleobservation´, utilizando el siguiente comando:
 
